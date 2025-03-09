@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Newsletter Registration</h2>
+
+        <!-- Form starts here -->
+        <form action="process.php" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="interests">Select your interests (You can choose more than one):</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="tech" name="interests[]" value="Tech"> <label for="tech">Tech</label><br>
+                <input type="checkbox" id="health" name="interests[]" value="Health"> <label for="health">Health</label><br>
+                <input type="checkbox" id="sports" name="interests[]" value="Sports"> <label for="sports">Sports</label><br>
+                <input type="checkbox" id="entertainment" name="interests[]" value="Entertainment"> <label for="entertainment">Entertainment</label><br>
+            </div>
+
+            <label for="country">Select your country:</label>
+            <select id="country" name="country" required>
+                <option value="">Select your country</option>
+                <option value="USA">United States</option>
+                <option value="Canada">Canada</option>
+                <option value="UK">United Kingdom</option>
+                <option value="Australia">Australia</option>
+                <!-- Add more countries as necessary -->
+            </select>
+
+            <button type="submit" class="submit-btn">Subscribe</button>
+        </form>
+    </div>
+</body>
+</html>
